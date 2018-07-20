@@ -1,0 +1,15 @@
+{% macro content(spec) %}
+
+{% set spec = spec or {} %}
+{% set _class = spec.class or '' %}
+
+<div class="{{_class}}">
+  <h2>{{spec.nombre}}</h2>
+  <p>Poblacion: {{spec.poblacion}}</p>
+  <img src="images/URL" alt="">
+
+  {% if spec.super %}
+    ESTO ES SUPER!
+  {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,27 @@
+{% extends '_layouts/base.nunjucks' %}
+
+{% import '_modules/nav/nav.nunjucks' as nav %}
+
+{% block content %}
+      <h1>
+            {{ site.data.ejemplo.paises.pais[0].nombre}}
+      </h1>
+
+      {% for val in site.data.ejemplo.paises.pais %}
+          {{ pais.content(
+            nombre: val.nombre,
+            poblacion: val.poblacion,
+            img: val.bandera,)
+            }}
+      {% endfor %}
+      </ul>
+
+      {{ nav.content({
+        class: "rojo",
+        texto: "Hola Mundo. estoy usando modulos, y me encantan." ,
+        super: true
+      })}}
+      <a href="contacto">Ir a contacto</a>
+   
+      <img src="images/gatito3.jpg" alt="cat in the bowl" /> 
+{% endblock %}
